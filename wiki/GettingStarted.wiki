@@ -1,8 +1,8 @@
-#summary One-sentence summary of this page.
+#summary Wanna help? contact us! and you can start writing
 
 = Introduction =
 
-Add your content here.
+Wanna help? contact us! and you can start writing
 
 
 = Details =
