@@ -1,0 +1,10 @@
+First add this to tor's config file
+
+{{{
+HiddenServiceDir /path/to/hidden_service/
+HiddenServicePort 11009 127.0.0.1:8975
+}}}
+
+Next start jtorchat go to advance tab, and fill in the torsettings.
+
+Press start.
