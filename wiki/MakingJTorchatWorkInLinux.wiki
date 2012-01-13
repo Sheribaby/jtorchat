@@ -7,4 +7,6 @@ HiddenServicePort 11009 127.0.0.1:8975
 
 Next start jtorchat go to advance tab, and fill in the torsettings.
 
+8975 can be any unused port and needs to be entered as jtorchats LOCAL_PORT and to get the socks port from the tor config aswell
+
 Press start.
