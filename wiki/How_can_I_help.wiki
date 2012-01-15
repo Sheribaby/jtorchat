@@ -1,4 +1,5 @@
 #summary How you can help the jTorChat project.
+#labels Featured
 = How can I help =
 
 If you want to help best way is to start the jTorChat and contact us.
