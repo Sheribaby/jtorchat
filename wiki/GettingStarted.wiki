@@ -1,15 +1,15 @@
-#summary Wanna help? contact us! and you can start writing
+#summary Wanna help? contact us!
 
-= Introduction =
+= First start on Windows =
 
-Wanna help? contact us! and you can start writing
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
-
-Test
+1. Go into jTorChat folder
+2. Run start.bat
+3. After initializing of Tor you get a settings menu.
+	3.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.
+	3.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.
+	3.3 Under advanced you can set the configuration for tor.
+	3.3.1 Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.
+	3.3.2 Local Port: Instead of 8975 you can set any unused port
+	3.3.3 Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.
+	3.3.4 Load Tor?: Check it if you want to use the portable Tor delivered with jTorChat
+4. Press "Request Buddies" under menupoint "File".
