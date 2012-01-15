@@ -17,4 +17,4 @@ HiddenServicePort 11009 127.0.0.1:8975
 	4.3.2 Local Port: Instead of 8975 you can set any unused port.<br>
 	4.3.3 Our ID: your hidden hostname without ".onion"<br>
 	4.3.4 Load Tor?: DO NOT CHECK THIS.<br>
-4. Press "Request Buddies" under menupoint "File".<br>
+5. Press "Request Buddies" under menupoint "File".<br>
