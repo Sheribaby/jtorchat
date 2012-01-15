@@ -2,7 +2,7 @@
 
 = Using the Broadcast Chat =
 
-In the main window with the option Tags you can select on which broadcast channel you want to participate.
+In the main window with the option Tag you can select on which broadcast channel you want to participate.
 
 If you select one you see the messages for this channel and can send messages to that channel.
 
