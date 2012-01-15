@@ -7,15 +7,6 @@
 HiddenServiceDir /path/to/hidden_service/
 HiddenServicePort 11009 127.0.0.1:8975
 }}}
-
-Next start jtorchat go to advance tab, and fill in the torsettings.
-
-8975 can be any unused port and needs to be entered as jtorchats
-
-LOCAL_PORT and to get the socks port from the tor config aswell
-
-youId is 
-
 2. Go into jTorChat folder.<br>
 3. Run jTorChat.jar.<br>
 4. After initializing of Tor you get a settings menu.<br>
