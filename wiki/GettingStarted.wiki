@@ -1,4 +1,4 @@
-#summary Wanna help? contact us!
+#summary Getting started with jTorChat on Windows
 
 = First start on Windows =
 
