@@ -1,0 +1,15 @@
+#summary How to add contacts.
+
+= Add Contact =
+
+There are 3 ways for adding contacts.
+
+1. File->Add contact.<br>
+ 1.1 Address: Here you can write the tor id of your contact.<br>
+ 1.2 Display name: Here you can write the name/nickname of your contact.<br>
+<br>
+2. Right click on a contact -> Add new contact.<br>
+ 1.1 Address: Here you can write the tor id of your contact.<br>
+ 1.2 Display name: Here you can write the name/nickname of your contact.<br>
+<br>
+3. File->Request buddies. This menu entry automaticly searches for new jTorChat users.
