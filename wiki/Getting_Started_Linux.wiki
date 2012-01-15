@@ -1,4 +1,4 @@
-#summary Getting started with jTorChat on Windows
+#summary Getting started with jTorChat on Linux
 
 = First start on Linux =
 
