@@ -10,11 +10,11 @@ HiddenServicePort 11009 127.0.0.1:8975
 2. Go into jTorChat folder.<br>
 3. Run jTorChat.jar.<br>
 4. After initializing of Tor you get a settings menu.<br>
-	4.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
-	4.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
-	4.3 Under advanced you can set the configuration for tor.<br>
-	4.3.1 Tor socks port: The Port from your tor config. if you followed point 1 it's 11009.<br>
-	4.3.2 Local Port: Instead of 8975 you can set any unused port.<br>
-	4.3.3 Our ID: your hidden hostname without ".onion"<br>
-	4.3.4 Load Tor?: DO NOT CHECK THIS.<br>
+ 4.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
+ 4.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
+ 4.3 Under advanced you can set the configuration for tor.<br>
+  4.3.1 Tor socks port: The Port from your tor config. if you followed point 1 it's 11009.<br>
+  4.3.2 Local Port: Instead of 8975 you can set any unused port.<br>
+  4.3.3 Our ID: your hidden hostname without ".onion"<br>
+  4.3.4 Load Tor?: DO NOT CHECK THIS.<br>
 5. Press "Request Buddies" under menupoint "File".<br>
