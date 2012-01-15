@@ -1,4 +1,5 @@
 #summary Getting started with jTorChat on Linux
+#labels Featured
 
 = First start on Linux =
 
