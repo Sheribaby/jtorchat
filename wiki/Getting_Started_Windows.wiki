@@ -5,11 +5,11 @@
 1. Go into jTorChat folder.<br>
 2. Run jTorChat.jar<br>
 3. After initializing of Tor you get a settings menu.<br>
-	3.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
-	3.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
-	3.3 Under advanced you can set the configuration for tor.<br>
-	3.3.1 Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
-	3.3.2 Local Port: Instead of 8975 you can set any unused port.<br>
-	3.3.3 Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
-	3.3.4 Load Tor?: Check it if you want to use the portable Tor delivered with jTorChat.<br>
+ 3.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
+ 3.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
+ 3.3 Under advanced you can set the configuration for tor.<br>
+  3.3.1 Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
+  3.3.2 Local Port: Instead of 8975 you can set any unused port.<br>
+  3.3.3 Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
+  3.3.4 Load Tor?: Check it if you want to use the portable Tor delivered with jTorChat.<br>
 4. Press "Request Buddies" under menupoint "File".<br>
