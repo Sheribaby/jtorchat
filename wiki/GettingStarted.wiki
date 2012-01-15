@@ -3,7 +3,7 @@
 = First start on Windows =
 
 1. Go into jTorChat folder.<br>
-2. Run start.bat<br>
+2. Run jTorChat.jar<br>
 3. After initializing of Tor you get a settings menu.<br>
 	3.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
 	3.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
