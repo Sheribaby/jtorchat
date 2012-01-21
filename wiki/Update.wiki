@@ -2,8 +2,8 @@
 
 = Update =
 
-1. Download the new version.
-2. Extract the files to a folder.
-3. Copy settings.ini and bl.txt from the old config folder to the new one.
-4. Move the new jtorchat folder to the location you want to have it.
+1. Download the new version.<br>
+2. Extract the files to a folder.<br>
+3. Copy settings.ini and bl.txt from the old config folder to the new one.<br>
+4. Move the new jtorchat folder to the location you want to have it.<br>
 5. Delete the old one and the zip-file.
