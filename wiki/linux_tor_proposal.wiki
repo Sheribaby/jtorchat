@@ -42,6 +42,8 @@ to replace
 					ProcessBuilder pb = new ProcessBuilder(new String[] {
 							"Tor/tor.exe", "-f", "torrc.txt"
 					});
+				pb.directory(new File("Tor/").getAbsoluteFile());
+				System.out.println(new File("Tor/").getAbsolutePath());
 }}}
 
 -------
