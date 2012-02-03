@@ -44,6 +44,30 @@ to replace
 					});
 }}}
 
+-------
+In TorLoader.java
+
+REMOVE:
+{{{
+		if (System.getProperty("os.name").toLowerCase().indexOf("win") == -1) {
+			Logger.log(Logger.NOTICE, "TorLoader", "Error: Not windows.");
+			return;
+		}
+		if (!new File("Tor/tor.exe").exists()) {
+			Logger.log(Logger.NOTICE, "TorLoader", "Error: Tor/tor.exe not found.");
+			return;
+		}
+}}}
+
+--------
+
+The other modification to the source to enable portable Linux is
+
+
+
+------
+
+
 The tor.sh has
 {{{
 #!/bin/sh
