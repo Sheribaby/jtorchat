@@ -1,0 +1,21 @@
+Code that should be added to line 29
+{{{
+				// check if windows
+				if ( System.getProperty("os.name").startsWith("Windows") ) {
+					// if so, then start tor.exe with torrc.txt
+					ProcessBuilder pb = new ProcessBuilder(new String[] {
+							"Tor/tor.exe", "-f", "torrc.txt"
+					});
+				
+				// if not windows, then use portable linux start up routine
+				} else {
+					// Make tor.sh executable - Should I do this? or is there a more direct way to chmod?
+					changePermissions=Runtime.getRuntime().exec("chmod 0700 Tor/tor.sh");
+					changePermissions.waitFor(); // I think this is optional, but should be kept to ensure that tor.sh is actually executable
+					// execute tor.sh now
+					ProcessBuilder pb = new ProcessBuilder(new String[] {
+							"Tor/tor.sh", "", ""
+					});
+				} 
+
+}}}
