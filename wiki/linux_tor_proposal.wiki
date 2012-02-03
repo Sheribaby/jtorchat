@@ -10,7 +10,7 @@ Code that should be added to line 29 in TorLoader.java
 	            	Logger.log(Logger.NOTICE, "TorLoader", "Start portable tor in windows");
 			        // if so, then start tor.exe with torrc.txt
 			        pb = new ProcessBuilder(new String[] {
-			                        "Tor/tor.exe", "-f", "torrc.txt"
+			        		Config.BASE_DIR+"Tor/tor.exe", "-f", "torrc.txt"
 			        });
 				/*
 				 *  check if linux or unix and config via processbuilder
@@ -28,12 +28,14 @@ Code that should be added to line 29 in TorLoader.java
                     }
 			        // execute tor.sh now
 			        pb = new ProcessBuilder(new String[] {
-			                        "Tor/tor.sh"
+			        		Config.BASE_DIR+"Tor/tor.sh"
 			        });
 				} 
 				/*
 				 *      execute portable tor
 				 */
+				pb.directory(new File(Config.BASE_DIR+"Tor/").getAbsoluteFile());
+				System.out.println(new File(Config.BASE_DIR+"Tor/").getAbsolutePath());
 }}}
 
 to replace
