@@ -20,7 +20,7 @@ Code that should be added to line 29 in TorLoader.java
 							changePermissions = Runtime.getRuntime().exec("chmod 0700 Tor/tor.sh");
 							changePermissions.waitFor();			
 		                } catch (IOException e1) {
-		        			Logger.log(Logger.NOTICE, "TorLoader", "Error: chmod permission fail"+e1.getLocalizedMessage());
+		                	 Logger.log(Logger.NOTICE, "TorLoader", "Error: chmod permission fail: "+e1.getLocalizedMessage());
 						} catch (InterruptedException e) {
 						}
                         // execute tor.sh now
