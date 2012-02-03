@@ -77,10 +77,10 @@ The other modification to the source to enable portable Linux in config.java is
 			 */
             String os = System.getProperty("os.name").toLowerCase(); // Operating System details as a CASE INSENSTIVE string
             // Check if missing windows or linux portable files. If so, then disable portable tor loading.
-            if (	((os.indexOf("win") >= 0) && !new File("Tor/tor.exe").exists()) // Windows check
-            	 ||	((os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) && !new File("Tor/tor.sh").exists()) ){ // Linux or Unix checks
+            if (	((os.indexOf("win") >= 0) && !new File(Config.BASE_DIR+"Tor/tor.exe").exists()) // Windows check
+            	 ||	((os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) && !new File(Config.BASE_DIR+"Tor/tor.sh").exists()) ){ // Linux or Unix checks
                 Logger.log(Logger.NOTICE, "Config", "Error: Tor/tor.exe (win*) or Tor/tor.sh (*nix or *nux) not found. - Recommend configering your own tor hidden services");
-    			loadTor = false;
+                loadTor = false;
             } else {
             	loadTor = Boolean.parseBoolean(assign("loadTor", "true", prop));
             }
@@ -90,7 +90,7 @@ The other modification to the source to enable portable Linux in config.java is
 			} else { // this will trigger a prompt for user to enter sock numbers
 							SOCKS_PORT = assignInt("SOCKS_PORT", -1, prop);
 							LOCAL_PORT = assignInt("LOCAL_PORT", -1, prop);
-			}
+			}	
 }}}
 
 REPLACING
