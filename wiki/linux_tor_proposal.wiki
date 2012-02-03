@@ -1,24 +1,36 @@
 Code that should be added to line 29 in TorLoader.java
 
-{{{
-				// check if windows
-				if ( System.getProperty("os.name").startsWith("Windows") ) {
-					// if so, then start tor.exe with torrc.txt
-					ProcessBuilder pb = new ProcessBuilder(new String[] {
-							"Tor/tor.exe", "-f", "torrc.txt"
-					});
-				
-				// if not windows, then use portable linux start up routine
-				} else {
-					// Make tor.sh executable - Should I do this? or is there a more direct way to chmod?
-					changePermissions=Runtime.getRuntime().exec("chmod 0700 Tor/tor.sh");
-					changePermissions.waitFor(); // I think this is optional, but should be kept to ensure that tor.sh is actually executable
-					// execute tor.sh now
-					ProcessBuilder pb = new ProcessBuilder(new String[] {
-							"Tor/tor.sh", "", ""
-					});
-				} 
-
+				ProcessBuilder pb=null;
+				String os = System.getProperty("os.name"); // Operating System details as a string
+                /*
+                 *  check if windows and config via processbuilder
+                 */
+                if (os.indexOf("win") >= 0) {
+                        // if so, then start tor.exe with torrc.txt
+                        pb = new ProcessBuilder(new String[] {
+                                        "Tor/tor.exe", "-f", "torrc.txt"
+                        });
+                /*
+                 *  check if linux or unix and config via processbuilder
+                 */
+                } else if(os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) {
+                        // Make tor.sh executable - Should I do this? or is there a more direct way to chmod?
+                        Process changePermissions;
+						try {
+							changePermissions = Runtime.getRuntime().exec("chmod 0700 Tor/tor.sh");
+							changePermissions.waitFor();			
+		                } catch (IOException e1) {
+		        			Logger.log(Logger.NOTICE, "TorLoader", "Error: chmod permission fail"+e1.getLocalizedMessage());
+						} catch (InterruptedException e) {
+						}
+                        // execute tor.sh now
+                        pb = new ProcessBuilder(new String[] {
+                                        "Tor/tor.sh", "", ""
+                        });
+                } 
+                /*
+                 *	execute portable tor
+                 */
 }}}
 
 to replace
