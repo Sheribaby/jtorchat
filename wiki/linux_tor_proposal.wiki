@@ -1,4 +1,5 @@
-Code that should be added to line 29
+Code that should be added to line 29 in TorLoader.java
+
 {{{
 				// check if windows
 				if ( System.getProperty("os.name").startsWith("Windows") ) {
@@ -18,4 +19,23 @@ Code that should be added to line 29
 					});
 				} 
 
+}}}
+
+to replace
+
+{{{
+					ProcessBuilder pb = new ProcessBuilder(new String[] {
+							"Tor/tor.exe", "-f", "torrc.txt"
+					});
+}}}
+
+The tor.sh has
+{{{
+#!/bin/sh
+
+trap 'kill -15 `cat tor.pid`' 15 #when this script closes, kill tor hidden service
+
+export PATH=$PATH:/usr/sbin # set some path var - not sure what it does
+tor -f torrc.txt --PidFile tor.pid & # start linux tor with torrc.txt
+wait # wait forever
 }}}
