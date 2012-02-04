@@ -60,7 +60,7 @@ BuddyList.java - hold location of remote buddylist file
 
 ----
 
-Under every
+Under every (in config.java)
 {{{
 		TCPort.profile_name = assign("profile_name", null, prop);
 		TCPort.profile_text = assign("profile_text", null, prop);
