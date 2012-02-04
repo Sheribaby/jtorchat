@@ -18,18 +18,23 @@ BuddyList.java - Method added (work in progress):
 			return;
 		}
 		
+		
 		/*
-		 *  RETREIVE REMOTE FILE VIA PROXY TO SCANNER OBJECT
+		 * SOCKET RETREIVE REMOTE FILE VIA PROXY TO SCANNER OBJECT
 		 * */
 		Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Retreiving remote buddies");
-		Scanner s = null ;
+		Socket ourSock = new Socket(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", Config.SOCKS_PORT)));
 		try {
-		    // Create a URL for the desired page
-		    URL url = new URL(remote_bl_URL);
-		    URLConnection conn = url.openConnection(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", Config.SOCKS_PORT)));
-			s = new Scanner( new InputStreamReader( conn.getInputStream() ) );
-		} catch (IOException e) {
-			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "ERROR: Cannot remote buddies list - Skipping: "+e);
+			ourSock.connect(InetSocketAddress.createUnresolved(remote_bl_URL, 80));
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}
+		Scanner s=null;
+		try {
+			Util.readBytesTillChar(ourSock.getInputStream(), '\n'); //strip away header (first line) // needs "import net.tsu.TCPort.util.Util;"
+			s = new Scanner( new InputStreamReader( ourSock.getInputStream()) ) ; //create scanner obj
+		} catch (IOException e1) {
+			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "ERROR: Cannot remote buddies list - Skipping: "+e1);
 			return;
 		}
 		
