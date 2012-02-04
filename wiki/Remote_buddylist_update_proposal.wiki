@@ -57,7 +57,7 @@ BuddyList.java - Method added (work in progress):
 	}
 }}}
 
----
+----
 
 BuddyList.java - hold location of remote buddylist file 
 
@@ -65,6 +65,12 @@ located inside BuddyList class
 
 {{{
 	public static String remote_bl_URL; // = "example.com/bl.txt";
+}}}
+
+under
+
+{{{
+	public static HashMap<String, Buddy> buds = new HashMap<String, Buddy>();
 }}}
 
 ----
