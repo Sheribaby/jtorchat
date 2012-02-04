@@ -6,15 +6,21 @@ BuddyList.java - Method added (work in progress):
 
 
 {{{
-
 	/*
 	 *  REMOTE BUDDY LOAD VIA TOR
 	 * */
 	public static void loadBuddiesRemote() throws FileNotFoundException {
 		
+		// Don't load if no url was specified
+		if ( remote_bl_URL == null ) {
+			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "No remote buddylist specified. Skipping remote load.");
+			return;
+		}
+		
 		/*
 		 *  RETREIVE REMOTE FILE VIA PROXY TO SCANNER OBJECT
-		 * */		
+		 * */
+		Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Retreiving remote buddies");
 		Scanner s = null ;
 		try {
 		    // Create a URL for the desired page
@@ -28,6 +34,7 @@ BuddyList.java - Method added (work in progress):
 		/*
 		 *  PROCESS FILE AND MERGE BUDDY
 		 * */
+		Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Processing remote buddies");
 		Random r = new Random();
 		while (s.hasNextLine()) {
 			String l = s.nextLine();
@@ -46,8 +53,8 @@ BuddyList.java - Method added (work in progress):
 			} else
 				new Buddy(l.substring(0, 16), null).reconnectAt = System.currentTimeMillis() + 15000 + r.nextInt(30000); //.connect();
 		}
+		
 	}
-
 }}}
 
 ---
