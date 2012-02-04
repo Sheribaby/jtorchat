@@ -7,7 +7,7 @@ There are 2 ways to open the settings menu.<br>
 1. File->Settings<br>
 2. Reight click on a contact -> Settings<br>
 
-There are also 2 Tabs:
+There are 3 Tabs:
 1. General:
  1.1 Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
  1.2 Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
