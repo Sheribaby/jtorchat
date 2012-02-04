@@ -1,5 +1,5 @@
 #summary Getting started with jTorChat on Linux
-#labels Featured
+#labels Featured,Phase-Deploy
 
 = First start on Linux =
 
