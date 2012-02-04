@@ -28,7 +28,8 @@ BuddyList.java - Method added (work in progress):
 		    URLConnection conn = url.openConnection(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", Config.SOCKS_PORT)));
 			s = new Scanner( new InputStreamReader( conn.getInputStream() ) );
 		} catch (IOException e) {
-			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "ERROR: Cannot remote buddies list: "+e);
+			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "ERROR: Cannot remote buddies list - Skipping: "+e);
+			return;
 		}
 		
 		
