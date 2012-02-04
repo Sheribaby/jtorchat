@@ -1,4 +1,5 @@
 #summary How to delete a contact.
+#labels Phase-Support
 
 = Delete Contact =
 
