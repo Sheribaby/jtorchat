@@ -14,6 +14,7 @@ BuddyList.java - Method added (work in progress):
 		// Don't load if no url was specified
 		if ( remote_bl_URL == null ) {
 			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "No remote buddylist specified. Skipping remote load.");
+			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Tip: remote_buddylist_url = example.com/bl.txt ; in settings.ini");
 			return;
 		}
 		
