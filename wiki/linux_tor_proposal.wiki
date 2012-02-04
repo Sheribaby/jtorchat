@@ -3,37 +3,20 @@ Code that should be added to line 29 in TorLoader.java
                 ProcessBuilder pb=null;
                 String os = System.getProperty("os.name").toLowerCase(); // Operating System details as a CASE INSENSTIVE string
             	Logger.log(Logger.NOTICE, "TorLoader ", "Checking OS: "+os);
-				/*
-				 *  check if windows and config via processbuilder
-				 */
+            	// PROCESSBUILDER settings for WINDOWS
 				if (os.indexOf("win") >= 0) {
 	            	Logger.log(Logger.NOTICE, "TorLoader", "Start portable tor in windows");
 			        // if so, then start tor.exe with torrc.txt
 			        pb = new ProcessBuilder(new String[] {
 			        		Config.BASE_DIR+"Tor/tor.exe", "-f", "torrc.txt"
 			        });
-				/*
-				 *  check if linux or unix and config via processbuilder
-				 */
+			    // PROCESSBUILDER settings for LINUX and UNIX
 				} else if(os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) {
 	            	Logger.log(Logger.NOTICE, "TorLoader", "Start portable tor in *nix or linux");
-			        // Make tor.sh executable - Should I do this? or is there a more direct way to chmod?
-			        Process changePermissions;
-                    try {
-                        changePermissions = Runtime.getRuntime().exec("chmod 0700 Tor/tor.sh");
-                        changePermissions.waitFor();                    
-		            } catch (IOException e1) {
-		            	Logger.log(Logger.NOTICE, "TorLoader", "Error: chmod permission fail: "+e1.getLocalizedMessage());
-                    } catch (InterruptedException e) {
-                    }
-			        // execute tor.sh now
 			        pb = new ProcessBuilder(new String[] {
-			        		Config.BASE_DIR+"Tor/tor.sh"
-			        });
-				} 
-				/*
-				 *      execute portable tor
-				 */
+			        		"tor", "-f", Config.BASE_DIR+"torrc.txt" //, "HiddenServiceDir", Config.BASE_DIR+"hidden_service"
+			        		});				
+				        } 
 				pb.directory(new File(Config.BASE_DIR+"Tor/").getAbsoluteFile());
 				System.out.println(new File(Config.BASE_DIR+"Tor/").getAbsolutePath());
 }}}
@@ -69,17 +52,11 @@ The other modification to the source to enable portable Linux in config.java is
 
 {{{
 			/*
-			 * Previously the logic was that... if using windows, use portable tor, if not then ask for settings input
-			 * However we now have support for linux.
-			 * Now, instead we want to know. Shall we load 'portable tor'? (maybe change LoadTor to LoadPortableTor)
-			 * the loadTor is always defined by settings.ini first. If not then we shall assume its first start, and that they want to go portable.
-			 * (note: only if the portable tor executables exist)
+			 * Check if we should Load Portable Tor (cannot if in windows and lacking tor.exe)
 			 */
-            String os = System.getProperty("os.name").toLowerCase(); // Operating System details as a CASE INSENSTIVE string
             // Check if missing windows or linux portable files. If so, then disable portable tor loading.
-            if (	((os.indexOf("win") >= 0) && !new File(Config.BASE_DIR+"Tor/tor.exe").exists()) // Windows check
-            	 ||	((os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) && !new File(Config.BASE_DIR+"Tor/tor.sh").exists()) ){ // Linux or Unix checks
-                Logger.log(Logger.NOTICE, "Config", "Error: Tor/tor.exe (win*) or Tor/tor.sh (*nix or *nux) not found. - Recommend configering your own tor hidden services");
+            if (	((System.getProperty("os.name").toLowerCase().indexOf("win") >= 0) && !new File(Config.BASE_DIR+"Tor/tor.exe").exists())		){// Windows check
+                Logger.log(Logger.NOTICE, "Config", "Error: Tor/tor.exe (win*) not found. - Recommend configering your own tor hidden services");
                 loadTor = false;
             } else {
             	loadTor = Boolean.parseBoolean(assign("loadTor", "true", prop));
