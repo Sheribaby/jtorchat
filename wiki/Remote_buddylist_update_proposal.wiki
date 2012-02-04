@@ -25,7 +25,7 @@ BuddyList.java - Method added (work in progress):
 		Scanner s = null ;
 		try {
 		    // Create a URL for the desired page
-		    URL url = new URL("example.com");
+		    URL url = new URL(remote_bl_URL);
 		    URLConnection conn = url.openConnection(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", Config.SOCKS_PORT)));
 			s = new Scanner( new InputStreamReader( conn.getInputStream() ) );
 		} catch (IOException e) {
