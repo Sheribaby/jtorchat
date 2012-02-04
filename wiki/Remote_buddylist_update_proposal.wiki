@@ -90,3 +90,30 @@ add this string
 		BuddyList.remote_bl_URL = assign("remote_buddylist_url", null, prop);
 
 }}}
+
+------
+
+Add to TCPort.java
+
+{{{
+			/* 
+			 * Call For remote buddylist on startup - (after Tor is presumed to have booted)
+			 * */
+			BuddyList.loadBuddiesRemote();
+}}}
+
+under
+
+{{{
+			if (!Config.TESTING && Config.loadTor) // only load portable tor if not testing
+				TorLoader.loadTor();
+			// new Gui().init();
+			runInit("net.tsu.TCPort.Gui.Gui");
+			launched = true;
+			try {
+				BuddyList.loadBuddies();
+			} catch (FileNotFoundException fnfe) {
+				fnfe.printStackTrace();
+				// no buddylist file
+			}
+}}}
