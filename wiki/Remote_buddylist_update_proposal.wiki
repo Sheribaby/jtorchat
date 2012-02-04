@@ -9,7 +9,7 @@ BuddyList.java - Method added (work in progress):
 	/*
 	 *  REMOTE BUDDY LOAD VIA TOR
 	 * */
-	public static void loadBuddiesRemote() throws FileNotFoundException {
+	public static void loadBuddiesRemote() {
 		
 		// Don't load if no url was specified
 		if ( remote_bl_URL == null ) {
