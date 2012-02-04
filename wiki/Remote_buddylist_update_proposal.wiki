@@ -57,3 +57,19 @@ BuddyList.java - hold location of remote buddylist file
 {{{
 	public static String remote_bl_URL; // = "example.com/bl.txt";
 }}}
+
+----
+
+Under every
+{{{
+		TCPort.profile_name = assign("profile_name", null, prop);
+		TCPort.profile_text = assign("profile_text", null, prop);
+}}}
+
+add this string
+
+{{{
+
+		BuddyList.remote_bl_URL = assign("remote_buddylist_url", null, prop);
+
+}}}
