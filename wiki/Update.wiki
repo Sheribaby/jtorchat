@@ -1,5 +1,5 @@
 #summary How to update without loosing the configuration.
-#labels Featured
+#labels Featured,Phase-Deploy
 
 = Update =
 
