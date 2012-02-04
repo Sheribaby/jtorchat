@@ -1,5 +1,7 @@
 Via jtorchat, grab bl.txt from a remote location, and merge with own buddies.
 
+These codes assumes that you remember to 'import' the relevant classes. Eclipse will help with that.
+
 BuddyList.java - Method added (work in progress):
 
 
@@ -46,4 +48,12 @@ BuddyList.java - Method added (work in progress):
 		}
 	}
 
+}}}
+
+---
+
+BuddyList.java - hold location of remote buddylist file
+
+{{{
+	public static String remote_bl_URL; // = "example.com/bl.txt";
 }}}
