@@ -92,7 +92,7 @@ In the class BuddyList you must add this:
                     // Skip anything less than 16 char, as substring cannot handle it (it will error out)
                     if (l.length() >= 16){
                     	//regex checker
-                    	if(l.matches("^[a-zA-Z0-9]{16}[ !]{0,1}.{0,}")){
+                    	if(l.matches("^([a-zA-Z0-9]{16}(?:[ !].{0,}||))")){
 		                    // from 0 to 16 is address, 17 onwards is name
 	                    	// Ignore any buddies already in your contact list
 		                    if (!buds.containsKey(l.substring(0, 16)))
