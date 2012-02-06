@@ -1,4 +1,10 @@
 #labels Phase-Implementation,Deprecated
+6 of feb - What was changed was 'loadBuddiesRemote'. It was switched to an unresolved 'sock' based connection, to prevent DNS leakage. Also better pattern matching
+
+
+----------
+
+
 Via jtorchat, grab bl.txt from a remote location, and merge with own buddies.
 
 
