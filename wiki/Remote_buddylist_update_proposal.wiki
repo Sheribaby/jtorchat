@@ -45,7 +45,12 @@ In the class BuddyList you must add this:
           Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "REMOTE BUDDYLISTURL LOCATION: "+remote_bl_URL);
 
           try {
-                  
+			//assume https:// if lacking protocol
+			if(!remote_bl_URL.matches(".+://.+")){
+				remote_bl_URL = "https://"+remote_bl_URL;
+			}
+
+
                   // Parse the URL for socket usage via URL. Can't use URL directly due to DNS leaks
                   URL aURL = new URL(remote_bl_URL);
                   // Placed parsed URL into vars for general usage 
