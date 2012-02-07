@@ -1,0 +1,21 @@
+/nick - change nickname
+
+/sync or /buddysync - gets the url to sync buddylist with
+
+/addbuddy - quickly adds a new buddy based on his/her address
+
+/help - prints out common instructions, as well as a link to a helpsite or documents.
+
+/dice - random number
+
+/time - your time
+
+/profile - change your profile msg
+
+/status - change your current status
+
+/quit - closes jtorchat
+
+/log - toggle logging of chat (very useful when you think you are gonna get raided)
+
+/add - add a person to a conversation (maybe via relay? Might be spoof prone) 
