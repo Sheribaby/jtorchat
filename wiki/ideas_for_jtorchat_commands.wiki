@@ -19,3 +19,18 @@
 /log - toggle logging of chat (very useful when you think you are gonna get raided)
 
 /add - add a person to a conversation (maybe via relay? Might be spoof prone) 
+
+---
+
+Harder to implement idea but may be useful (hence is low priority):
+
+PAGEFILE System - Kind of like 
+
+/page {filename} - request the other user to output to chat window the content from /txt/ folder as text.
+
+/mypage {filename} - same as above, but outputs your own file for the other user.
+
+later on access control should be considered, however I don't know how this can be best implemented. Maybe via password? Maybe via member-list?
+/page {filename} {password} 
+
+*Example* "/page FAQ" will tell the other user to search their /txt/ folder for "FAQ" or "FAQ.txt" (basically the first term of the filename). If the other user finds "FAQ"/"FAQ.txt" that user displays the content.
