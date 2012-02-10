@@ -2,6 +2,8 @@ This is a system designed to spit out a page to sender via "/page" command
 
 Note: There is a problem with buddy.sendMessage() , it doesn't send strings with multi-line "\n" "\n\r" characters. Hence this code doesn't work, as nothing is displayed on the other side. Need to fix that if you want this system to work.
 
+Note Note: actually it might be that the file read in, is not in UTF-8, not sure how to deal with that...
+
 
 ----
 in TCPort.java
