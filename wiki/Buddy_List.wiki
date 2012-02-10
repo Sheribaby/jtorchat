@@ -1,9 +1,7 @@
 This is a remote buddylist for jtorchat to sync with. If you are online often, then please add yourself here. Otherwise remove it.
 
 The jtorchat program will use this link https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
-
--------------------------
-
+------------------------------------------------------------------------
 xzjxkjla7w2423ir juanperez
 p36ggotckdl5hkun userid0dev
 djtcxftb2pwmxjvk!switchboard operator
