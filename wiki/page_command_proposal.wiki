@@ -61,7 +61,7 @@ public class Page {
 	// Read file
 	private static String read(String pagename) throws FileNotFoundException{
 		String result = "[File:"+pagename+"]"; // show the filename
-		if(pagename.matches(".+[.][.].+")) {return "page not found";} //rejects any attempt to leave /txt/
+		if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
 		Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));			
         // repeat until all lines is read
 		while (scannerObj.hasNextLine()) {
@@ -74,6 +74,16 @@ public class Page {
 	public static void init(){
 		Gui.getInstance().cmdListeners.put("mypage", new GuiListener() {
 			public void onCommand(Buddy buddy, String s) {
+				
+				// pass through page commands to other user
+				if (s.startsWith("/page")) {
+					try {
+						buddy.sendMessage(s);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				
 				// Send own page to buddy
 				if (s.startsWith("/mypage")) {
 					String filename = s.substring(7).replaceAll("\n", "\\n").trim();
