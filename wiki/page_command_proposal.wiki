@@ -1,4 +1,6 @@
-This is a system designed to spit out a page to sender via "/page" command
+==Problem was fixed, this is now 100% working code==
+
+This is a system designed to spit out a page to sender via "/page" command. This is a plugin, so besides the runStaticInit, it has no presence in the rest of the code.
 
 Note: There is a problem with buddy.sendMessage() , it doesn't send strings with multi-line "\n" "\n\r" characters. Hence this code doesn't work, as nothing is displayed on the other side. Need to fix that if you want this system to work.
 
