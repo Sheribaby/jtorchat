@@ -1,0 +1,144 @@
+This is a system designed to spit out a page to sender via "/page" command
+
+Note: There is a problem with buddy.sendMessage() , it doesn't send strings with multi-line "\n" "\n\r" characters. Hence this code doesn't work, as nothing is displayed on the other side. Need to fix that if you want this system to work.
+
+
+----
+in TCPort.java
+
+{{{
+			runStaticInit("net.tsu.TCPort.page.Page");
+}}}
+
+----
+
+in a new net.tsu.TCPort.page folder
+
+{{{
+package net.tsu.TCPort.page;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+
+import net.tsu.TCPort.APIManager;
+import net.tsu.TCPort.Buddy;
+import net.tsu.TCPort.Config;
+import net.tsu.TCPort.Logger;
+import net.tsu.TCPort.Gui.Gui;
+import net.tsu.TCPort.Gui.GuiListener;
+import net.tsu.TCPort.listeners.APIListener;
+import net.tsu.TCPort.listeners.CommandListener;
+
+public class Page {
+	
+	// Retrieve page
+	public static String page(String pagename){
+		String result = "";
+		try {
+			if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
+			if( ( pagename == null ) || (pagename == "") || (pagename.matches("[ ]+")) ){ pagename = "index"; } // defaults to page
+			Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));
+			Logger.log(	Logger.NOTICE,"Page","Reading :"+pagename);
+
+            // repeat until all lines is read
+			while (scannerObj.hasNextLine()) {
+				//result = result+System.getProperty("line.separator")+scannerObj.nextLine();
+				result = result+"\n"+scannerObj.nextLine();
+				
+			}			
+			return result;
+			
+		} catch (FileNotFoundException e) {
+			return "page not found";
+		}
+	}
+
+	// start listeners
+	public static void init(){
+		Gui.getInstance().cmdListeners.put("mypage", new GuiListener() {
+
+			public void onCommand(Buddy buddy, String s) {
+				// Send own page to buddy
+				if (s.startsWith("/mypage")) {
+					String filename = s.substring(6).replaceAll("\n", "\\n").trim();
+					try {
+						buddy.sendMessage(page(filename));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}
+			
+		});
+		
+		// initate listener to to reply to any /page request
+		APIManager.addEventListener(new Listener());
+		
+		
+	}
+	
+	private static class Listener implements APIListener, CommandListener {
+
+		@Override
+		public void onCommand(Buddy buddy, String s) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onStatusChange(Buddy buddy, byte newStatus, byte oldStatus) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProfileNameChange(Buddy buddy, String newName,
+				String oldName) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProfileTextChange(Buddy buddy, String newText,
+				String oldText) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onAddMe(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onMessage(Buddy buddy, String s) {
+			// TODO Auto-generated method stub
+			if (s.startsWith("/page")) {
+				String filename = s.substring(5).replaceAll("\n", "\\n").trim();
+				try {
+					buddy.sendMessage(page(filename));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		@Override
+		public void onNewBuddy(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onBuddyRemoved(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}		
+	}
+
+}
+}}}
