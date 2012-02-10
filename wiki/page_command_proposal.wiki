@@ -4,6 +4,8 @@ Note: There is a problem with buddy.sendMessage() , it doesn't send strings with
 
 Note Note: actually it might be that the file read in, is not in UTF-8, not sure how to deal with that...
 
+*FINAL NOTE*: okay fixed, must escape "\n" by using "\\n"
+
 
 ----
 in TCPort.java
@@ -36,47 +38,53 @@ import net.tsu.TCPort.listeners.CommandListener;
 public class Page {
 	
 	// Retrieve page
-	public static String page(String pagename){
-		String result = "";
-		try {
-			if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
-			if( ( pagename == null ) || (pagename == "") || (pagename.matches("[ ]+")) ){ pagename = "index"; } // defaults to page
-			Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));
-			Logger.log(	Logger.NOTICE,"Page","Reading :"+pagename);
-			
-            // repeat until all lines is read
-			while (scannerObj.hasNextLine()) {
-				//result = result+System.getProperty("line.separator")+scannerObj.nextLine();
-				result = result+"\r\n"+scannerObj.nextLine();
-			}			
-			
-			Logger.log(	Logger.NOTICE,"Page","Reading :"+result);
-			
-			return result;
-			
+	private static String page(String pagename){
+		if( pagename == null || pagename.length() == 0 ){ pagename = "index"; } // defaults to page
+		// Try to locate the file
+		try {					
+			return read(pagename);
 		} catch (FileNotFoundException e) {
-			return "page not found";
+			try {					
+				return read(pagename+".nfo");
+			} catch (FileNotFoundException e1) {
+				try {					
+					return read(pagename+".txt");
+				} catch (FileNotFoundException e2) {
+					Logger.log(	Logger.NOTICE,"Page", "Error:"+e2 );
+					return "page not found";
+				}
+			}
 		}
 	}
+	
+	// Read file
+	private static String read(String pagename) throws FileNotFoundException{
+		String result = "";
+		if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
+		Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));			
+        // repeat until all lines is read
+		while (scannerObj.hasNextLine()) {
+			result += "\\n"+scannerObj.nextLine();
+		}						
+		return result;
+	}
+
 
 	// start listeners
 	public static void init(){
 		Gui.getInstance().cmdListeners.put("mypage", new GuiListener() {
-
 			public void onCommand(Buddy buddy, String s) {
 				// Send own page to buddy
 				if (s.startsWith("/mypage")) {
-					String filename = s.substring(6).replaceAll("\n", "\\n").trim();
+					String filename = s.substring(7).replaceAll("\n", "\\n").trim();
 					try {
 						buddy.sendMessage(page(filename));
 					} catch (IOException e) {
 						e.printStackTrace();
 					}
 				}
-			}
-			
+			}	
 		});
-		
 		// initate listener to to reply to any /page request
 		APIManager.addEventListener(new Listener());
 		
