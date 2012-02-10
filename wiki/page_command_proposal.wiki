@@ -25,7 +25,6 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Scanner;
-
 import net.tsu.TCPort.APIManager;
 import net.tsu.TCPort.Buddy;
 import net.tsu.TCPort.Config;
@@ -59,7 +58,7 @@ public class Page {
 	
 	// Read file
 	private static String read(String pagename) throws FileNotFoundException{
-		String result = "";
+		String result = "[File:"+pagename+"]"; // show the filename
 		if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
 		Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));			
         // repeat until all lines is read
@@ -68,7 +67,6 @@ public class Page {
 		}						
 		return result;
 	}
-
 
 	// start listeners
 	public static void init(){
