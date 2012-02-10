@@ -45,8 +45,10 @@ public class Page {
             // repeat until all lines is read
 			while (scannerObj.hasNextLine()) {
 				//result = result+System.getProperty("line.separator")+scannerObj.nextLine();
-				result = result+"\n"+scannerObj.nextLine();
+				result = result+"\r\n"+scannerObj.nextLine();
 			}			
+			
+			Logger.log(	Logger.NOTICE,"Page","Reading :"+result);
 			
 			return result;
 			
@@ -140,4 +142,3 @@ public class Page {
 	}
 
 }
-}}}
