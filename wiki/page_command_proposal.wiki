@@ -41,13 +41,13 @@ public class Page {
 			if( ( pagename == null ) || (pagename == "") || (pagename.matches("[ ]+")) ){ pagename = "index"; } // defaults to page
 			Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));
 			Logger.log(	Logger.NOTICE,"Page","Reading :"+pagename);
-
+			
             // repeat until all lines is read
 			while (scannerObj.hasNextLine()) {
 				//result = result+System.getProperty("line.separator")+scannerObj.nextLine();
 				result = result+"\n"+scannerObj.nextLine();
-				
 			}			
+			
 			return result;
 			
 		} catch (FileNotFoundException e) {
@@ -75,7 +75,6 @@ public class Page {
 		
 		// initate listener to to reply to any /page request
 		APIManager.addEventListener(new Listener());
-		
 		
 	}
 	
