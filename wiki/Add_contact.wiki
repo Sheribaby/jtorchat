@@ -3,7 +3,7 @@
 
 = Add Contact =
 
-There are 3 ways for adding contacts.<br>
+There are three ways for adding contacts.<br>
 
 1. File->Add contact.<br>
  1.1. Address: Here you can write the tor id of your contact.<br>
