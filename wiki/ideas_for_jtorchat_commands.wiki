@@ -1,3 +1,4 @@
+#labels Deprecated
 /nick - change nickname
 
 /sync or /buddysync - gets the url to sync buddylist with
