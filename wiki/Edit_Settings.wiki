@@ -3,21 +3,21 @@
 
 = Edit Settings =
 
-There are 2 ways to open the settings menu.<br>
 1. File->Settings<br>
-2. Reight click on a contact -> Settings<br>
 
-There are 3 Tabs: <br>
-3. General: <br>
- 3.1. Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
- 3.2. Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
- 3.3. Alert activ: If checked it shows a little window when a message arrives. (just by the clock)<br>
-4. Advanced: <br>
- 4.1. Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
- 4.2. Local Port: Instead of 8975 you can set any unused port.<br>
- 4.3. Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
- 4.4. Initial Tor Portable at start: Check it if you want to use the portable Tor delivered with jTorChat.<br>
-5. Buddy Sync: <br>
- 5.1. URL to Buddylist: Enter a URL to the buddylist. i.e. http://www.example.local/bl.txt<br>
- 5.2. sync: Click to get the buddylist<br>
- 5.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
+There are 3 Tabs: <br><br>
+2. General: <br>
+ 2.1. Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
+ 2.2. Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
+ 2.3. Alert activ: If checked it shows a little window when a message arrives. (just by the clock)<br>
+ 2.4. start File transfer automaticly: If checked it saves files automaticly in Download folder.<br>
+ 2.5. page function: with this option you can activate the page function. For details about the page function go to page function entry in wiki.<br>
+3. Advanced: <br>
+ 3.1. Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
+ 3.2. Local Port: Instead of 8975 you can set any unused port.<br>
+ 3.3. Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
+ 3.4. Initial Tor Portable at start: Check it if you want to use the portable Tor delivered with jTorChat.<br>
+4. Buddy Sync: <br>
+ 4.1. URL to Buddylist: Enter a URL to the buddylist. i.e. https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki<br>
+ 4.2. sync: Click to get the buddylist<br>
+ 4.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
