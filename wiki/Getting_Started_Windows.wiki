@@ -19,7 +19,7 @@
    4.2.3. Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
    4.2.4. Initial Tor Portable at start: Check it if you want to use the portable Tor delivered with jTorChat.<br>
  4.3 Buddy Sync: <br>
-   4.3.1. URL to Buddylist: Enter a URL to the buddylist. i.e. http://www.example.local/bl.txt<br>
+   4.3.1. URL to Buddylist: Enter a URL to the buddylist. i.e. https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki<br>
    4.3.2. sync: Click to get the buddylist<br>
    4.3.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
 5. Press "Request Buddies" under menupoint "File".<br>
