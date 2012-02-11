@@ -1,3 +1,11 @@
 #summary How to use the page function.
 
 = Page function =
+
+This is a system designed to spit out a page to sender via "/page" command.<br>
+
+Adding pages "/mypage":
+
+
+
+Requesting pages "/page":
