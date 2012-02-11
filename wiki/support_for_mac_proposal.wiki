@@ -1,3 +1,4 @@
+#labels Deprecated
 I don't know how it will exactly work, but ripping the 'tor' files off the vidalia bundle from torproject, and renaming it to either tor-ppc.app and tor-intel.app is the order around this proposal.
 
 This is the modified code for Process builder configeration in TorLoader.java
