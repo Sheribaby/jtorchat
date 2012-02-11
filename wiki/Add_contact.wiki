@@ -4,7 +4,6 @@
 = Add Contact =
 
 There are three ways for adding contacts.<br>
-
 1. File->Add contact.<br>
  1.1. Address: Here you can write the tor id of your contact.<br>
  1.2. Display name: Here you can write the name/nickname of your contact.<br>
