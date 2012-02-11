@@ -1,0 +1,42 @@
+#summary List of useful chat commands
+
+= Chat commands =
+
+
+/nick - change nickname
+
+/profile - change your profile msg
+
+/sync - gets the url to sync buddylist with
+
+/dice - random number
+
+/time - your time
+
+/mypage - 
+
+/page - 
+
+/status - change your current status
+
+/addbuddy - quickly adds a new buddy based on his/her address
+
+/delbuddy - quickly removes a buddy based on his/her address
+
+/log - toggle logging of chat (very useful when you think you are gonna get raided)
+
+/me -
+
+/quit - closes jtorchat
+
+/help - prints out common instructions.
+
+
+
+
+
+
+
+
+
+/add - add a person to a conversation (maybe via relay? Might be spoof prone) 
