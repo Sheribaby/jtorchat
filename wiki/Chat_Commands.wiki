@@ -13,7 +13,7 @@
 
 /time - Gets your local time
 
-/mypage - Send a page from you to your buddy
+/sendpage - Send a page from you to your buddy
 
 /page - Retrieve a page from your buddy
 
