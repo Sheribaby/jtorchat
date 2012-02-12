@@ -4,8 +4,8 @@
 
 The new Page function is for retrieving pages from others automatically.<br/><br/>
 
-With /page <file> you can retrieve a site from your buddy.<br/>
-With /mypage <file> you can send a site to your buddy.<br/><br/>
+With /page "filename" you can retrieve a site from your buddy.<br/>
+With /mypage "filename" you can send a site to your buddy.<br/><br/>
 
 When there is no file in the command, it looks automatically for the page index.<br/>
 
