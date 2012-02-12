@@ -9,5 +9,5 @@ With /page file you can retrieve a site from another.<br/>
 With /mypage file you can send a site to another.<br/><br/>
 
 When there are no file in the command, it is automatically index.<br/>
-For set your own page you must set page in the settings on and create a <br/>file with the name index.txt or another file with the end .txt in page/ <br/>
+For set your own page you must set it on in the settings and create a <br/>file with the name index.txt or another file with the end .txt in page/ <br/>
 Now your client sent automatically this text to all the other when the command come in.
