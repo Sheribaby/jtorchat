@@ -3,30 +3,30 @@
 = Chat commands =
 
 
-/nick - change nickname
+/nick - Change your nickname
 
-/profile - change your profile msg
+/profile - Change your profile text
 
-/sync - gets the url to sync buddylist with
+/sync - Change the URL to sync your buddylist
 
-/dice - random number
+/dice - Gets a random number
 
-/time - your time
+/time - Gets your local time
 
-/mypage - send a page from your to the other
+/mypage - Send a page from you to your buddy
 
-/page - retrieve a page from the other
+/page - Retrieve a page from your buddy
 
-/status - change your current status
+/status - Change your current status
 
-/addbuddy - quickly adds a new buddy based on his/her address
+/addbuddy - Quickly adds a new buddy based on his/her address
 
-/delbuddy - quickly removes a buddy based on his/her address
+/delbuddy - Quickly removes a buddy based on his/her address
 
-/log - save a log from the chatwindow in log/
+/log - Save a log from the chatwindow in ./log
 
-/me - make an action
+/me - Make an action example: /me is going to drive now...
 
-/quit - closes jtorchat
+/quit - Closes jtorchat
 
-/help - prints out common instructions.
+/help - Prints out common instructions.
