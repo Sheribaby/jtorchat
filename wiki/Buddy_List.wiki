@@ -1,3 +1,4 @@
+#summary A Buddy list for sync
 This is a remote buddylist for jtorchat to sync with. If you are online often, then please add yourself here. Otherwise remove it.
 
 The jtorchat program will use this link https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
