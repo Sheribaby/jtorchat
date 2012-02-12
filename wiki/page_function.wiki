@@ -2,10 +2,12 @@
 
 = Page function =
 
-This is a system designed to spit out a page to sender via "/page" command.<br>
+The new Page function is for retrieving sites from other automatically.
 
-Adding pages "/mypage":
+Every Client can start this function for the other.
+With /page <file> you can retrieve a site from another.
+With /mypage <file> you can send a site to another.
 
-
-
-Requesting pages "/page":
+When there are no <file> in the command, it is automatically index.
+For set your own page you must set page in the settings on and create a file with the name index.txt or another file with the end .txt in page/ 
+Now your client sent automatically this text to all the other when the command come in.
