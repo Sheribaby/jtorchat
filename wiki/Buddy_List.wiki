@@ -1,7 +1,7 @@
 #summary A Buddy list for sync
-This is a remote buddylist for jtorchat to sync with. If you are online often, then please add yourself here. Otherwise remove it.
+This is the default buddylist for jTorchat. If you are online often, then please add yourself here. Otherwise remove your entry (if already on the list).
 
-The jtorchat program will use this link https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
+The jTorchat will use this URL https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
 ------------------------------------------------------------------------
 xzjxkjla7w2423ir juanperez
 p36ggotckdl5hkun userid0dev
