@@ -1,4 +1,5 @@
-0.7.1\n
+0.7.1
+
 update0.7.1.zip
 important
 
