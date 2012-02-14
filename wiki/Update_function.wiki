@@ -1,5 +1,4 @@
-#labels Deprecated
-0.7.1
+0.7.1\n
 update0.7.1.zip
 important
 
@@ -7,3 +6,5 @@ I try to integrate a update function in JTorchat,
 it can started with all adress which have a compatibel Update file.
 
 It is a Test
+
+#labels Deprecated
