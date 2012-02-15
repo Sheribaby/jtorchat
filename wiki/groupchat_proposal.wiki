@@ -30,6 +30,6 @@ groupInfo = UUID UserA [UserB] [UserC]
     # sent: [command] [UUID] [Sig] [Msg] 
     # sent: "groupChat KHIGIKJ [Sig] hey all! How are you"
  * OnRelayMsg: Only relay message to those in the group
- * OnReceive: Verify Sig, then display message. if messgae is unverified/error, then add (unverified) to name.
+ * OnReceive: Verify Sig, then display message. if message is unverified/error, then add (unverified) to name.
  * OnLeave: Send a command to all to delete you from list.
  * OnAdd: Send everyone the user's ID
