@@ -1,0 +1,23 @@
+This is a complex concept to do. These are the elements I currenly can think of for groupchat. Please edit your ideas here (or comment below)
+
+RSA signiture verification - for spoof protection
+
+Groupchat Broadcast
+
+----------------
+
+Proposed Groupchat process
+
+Legend(key):
+UUID - unique id that uniquely identifies the chat group 
+UserA - group starter's torchat address
+UserB - group participant's torchat address
+UserC - group participant's torchat address (leaves later)
+UserD - group participant's torchat address (joins later)
+
+UserA wants to start a group, so creates a new string with starting information about the group. Lets call it "GroupInfo"
+
+initial structure of groupInfo:
+groupInfo = UUID UserA [UserB] [UserC]
+
+* User
