@@ -7,8 +7,9 @@ Groupchat Broadcast
 ----------------
 
 =Proposed Group Chat process=
-{{{
+
 Legend(key):
+{{{
 UUID  -(e.g. KHIGIKJ) unique id string that uniquely identifies the chat group 
 UserA -(e.g. Andrew) group starter's torchat address
 UserB -(e.g. Bokkaa) group participant's torchat address
@@ -24,12 +25,28 @@ initial structure of groupInfo:
 groupInfo = UUID UserA [UserB] [UserC]
 }}}
 
+== Steps for groupchat ==
+
  * Initial: UserA sends groupInfo to UserB and UserC
- * Initial: Everybody grabs everybody's RSA public key
+ * Initial2: Everybody grabs everybody's RSA public key
  * OnUserMsg: The user sends a broadcast msg structured like this:
-    # sent: [command] [UUID] [Sig] [Msg] 
-    # sent: "groupChat KHIGIKJ [Sig] hey all! How are you"
+    # send: [command] [UUID] [Sig] [Msg] 
+    # send: "groupChat KHIGIKJ [Sig] hey all! How are you"
  * OnRelayMsg: Only relay message to those in the group
  * OnReceive: Verify Sig, then display message. if message is unverified/error, then add (unverified) to name.
  * OnLeave: Send a command to all to delete you from list.
+    # send: [command] [UUID] [Sig] [leave Msg]
+    # send: "groupchat KHIGIKJ [Sig] \leave"
  * OnAdd: Send everyone the user's ID
+    # send: [command] [UUID] [Sig] [add Msg]
+    # send: "groupchat KHIGIKJ [Sig] \add gh8jdiek24ngei35"
+
+--------------------------
+
+Can possibly set chat group to disallow adding users by nonstarter (by default? maybe not)
+
+if that is the case, we shall also need
+
+ * OnKick:
+    # send: [command] [UUID] [Sig] [add Msg]
+    # send: "groupchat KHIGIKJ [Sig] \kick gh8jdiek24ngei35"
