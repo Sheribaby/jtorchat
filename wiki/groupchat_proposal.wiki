@@ -22,7 +22,9 @@ UserA wants to start a group, so creates a new string with starting information 
 
 {{{
 initial structure of groupInfo:
-groupInfo = UUID UserA [UserB] [UserC]
+groupInfo = "UUID UserA [UserB] [UserC]";
+e.g.
+groupInfo = "KHIGIKJ uemrifkolgutjbuq egumkihjfujropid gh8jdiek24ngei35";
 }}}
 
 == Steps for groupchat ==
@@ -50,3 +52,5 @@ if that is the case, we shall also need
  * OnKick:
     # send: [command] [UUID] [Sig] [add Msg]
     # send: "groupchat KHIGIKJ [Sig] \kick gh8jdiek24ngei35"
+
+as well as a way to 'flag' a chatgroup as moderated, e.g. adding an "@" in front of an address, to show that this person is an admin.
