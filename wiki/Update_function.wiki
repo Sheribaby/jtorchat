@@ -1,4 +1,4 @@
-<version!0.7.1!>
+<version!0.7.1!>\n
 <typ!important!>
 
 I try to integrate a update function in JTorchat,
