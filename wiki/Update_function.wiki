@@ -1,7 +1,5 @@
-0.7.1
-
-update0.7.1.zip
-important
+<version!0.7.1!>
+<typ!important!>
 
 I try to integrate a update function in JTorchat,
 it can started with all adress which have a compatibel Update file.
