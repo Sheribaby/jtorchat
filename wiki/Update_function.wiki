@@ -2,7 +2,6 @@
 
 <typ!important!>
 
-I try to integrate a update function in JTorchat,
-it can started with all adress which have a compatibel Update file.
-
-It is a Test
+This is the file for checking updates.
+You can use it with this link:
+https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki
