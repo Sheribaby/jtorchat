@@ -7,7 +7,7 @@ write a comment and we will do it for you.<br/><br/>
 
 The jTorchat will use this URL https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
 ------------------------------------------------------------------------
-xzjxkjla7w2423ir juanperez
+
 p36ggotckdl5hkun userid0dev
 djtcxftb2pwmxjvk!switchboard operator
 6bvpyp2n7vhcabkv mr_p
@@ -34,3 +34,4 @@ tl;dr: Infodesk operators are living addressbooks
 yffsghiwlxo3huaq!infodesk - Coordinator - jtorchat
 bwkuztdwo4a43uql!INFODESK Africa - Punupun
 d3fxnntczxbqgkql!INFODESK Central Europe - BadMad
+xzjxkjla7w2423ir!INFODESK South America - juanperez
