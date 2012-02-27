@@ -1,6 +1,6 @@
-<version!0!7!2!>
+<version!0!7!3!>
 
-<typ!important!>
+<typ!important for linux!>
 
 This is the file for checking updates.
 You can use it with this link:
