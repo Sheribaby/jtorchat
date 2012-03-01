@@ -47,3 +47,6 @@ fs6qgtdynha3p6rn CWKU - SimplePM Admin
 
 // OPiran  irc.voxanon.net/#opiran
 52jiqq3fpn7oghtq OPIRAN - Severus_Snape
+
+// TorStatusNet http://lotjbov3gzzf23hc.onion/
+25kiyrtxkvx3iucr TorStatusNet - administrator 
