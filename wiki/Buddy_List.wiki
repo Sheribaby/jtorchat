@@ -43,3 +43,6 @@ mqny6ru45n6vgljz ANONPLUS -AnonPlusRadio- DarkNetFan
 
 // SimplePM - 4v6veu7nsxklglnu.onion/SimplePM.php
 fs6qgtdynha3p6rn CWKU - SimplePM Admin
+
+// OPiran irc.iranserv.com
+52jiqq3fpn7oghtq OPIRAN - Severus_Snape
