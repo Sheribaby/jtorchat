@@ -8,6 +8,8 @@ write a comment and we will do it for you.<br/><br/>
 The jTorchat will use this URL https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
 ------------------------------------------------------------------------
 
+{{{
+
 p36ggotckdl5hkun userid0dev
 djtcxftb2pwmxjvk!switchboard operator
 6bvpyp2n7vhcabkv mr_p
@@ -17,8 +19,6 @@ rllur4avbo5agjfg Tsu
 //h4bgvowxg33b5akq neu3no.de // got annoyed by too many newcomers, just add him manually if you want to chat to him.
 ey4eamd4s5lyr6wk D4N73
 5lr7m2lqa7gdxucf ami
-
-------------------------------------------------------------------------
 
 ===== INFODESK PROJECT ============
 The Infodesk project is a network of netcitizens who have aspired to be the connecting dots for newcoming jtorchat users. They will essentially be the living addressbook for the torchat network, helping to connect people together.
@@ -31,8 +31,6 @@ yffsghiwlxo3huaq!infodesk - Coordinator - jtorchat
 bwkuztdwo4a43uql!INFODESK Africa - Punupun
 d3fxnntczxbqgkql!INFODESK Central Europe - BadMad
 xzjxkjla7w2423ir!INFODESK South America - juanperez
-
-------------------------------------------------------------------------
 
 ===== Other Organizations ========
 We have no relations to these people or organizations. Let us know if we are missing, or have an error in this list. (or if any in here are acting like an arse
