@@ -1,7 +1,7 @@
-#summary How to update without loosing the configuration.
+#summary How to manually update without loosing the configuration.
 #labels Featured,Phase-Deploy
 
-= Update =
+= Manual Update =
 
 1. Download the new version.<br>
 2. Extract the files to a folder.<br>
