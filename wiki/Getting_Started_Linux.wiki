@@ -10,7 +10,7 @@ HiddenServicePort 11009 127.0.0.1:8975
 }}}
 2. Go into jTorChat folder.<br>
 3. Run jTorChat.jar.<br>
-4. After initializing of Tor you get a settings menu.<br> There are 3 Tabs:<br>
+4. After initializing of Tor you get a settings menu.<br> There are 4 Tabs:<br>
   4.1 General:<br>
    4.1.1. Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
    4.1.2. Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
@@ -26,4 +26,9 @@ HiddenServicePort 11009 127.0.0.1:8975
    4.3.1. URL to Buddylist: Enter a URL to the buddylist. i.e. https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki<br>
    4.3.2. sync: Click to get the buddylist<br>
    4.3.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
+ 4.4 Update Check: <br>
+   4.4.1  URL for check: Enter the update URL.
+          https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki<br>
+   4.4.2 check: click here for updating.<br>
+   4.4.4 check for update at every start: check if you want to search for updates at start.<br>
 5. Press "Request Buddies" under menupoint "File".<br>
