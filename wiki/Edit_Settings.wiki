@@ -21,3 +21,8 @@ There are 3 Tabs: <br><br>
  4.1. URL to Buddylist: Enter a URL to the buddylist. i.e. https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki<br>
  4.2. sync: Click to get the buddylist<br>
  4.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
+5 Update Check: <br>
+ 5.1  URL for check: Enter the update URL.
+          https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki<br>
+ 5.2 check: click here for updating.<br>
+ 5.4 check for update at every start: check if you want to search for updates at start.<br>
