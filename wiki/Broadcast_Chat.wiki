@@ -1,5 +1,5 @@
 #summary How to use the broadcast chat.
-#labels Phase-Support
+#labels Phase-Support,Deprecated
 
 = Using the Broadcast Chat =
 
