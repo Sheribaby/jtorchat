@@ -23,6 +23,7 @@ kojz446wdcntugbh pro3phec
 xpo6lqilqymo2tll Blackbird-NSA
 d4la2j3emz2gzsxz Porlington
 
+
 ===== INFODESK PROJECT ============
 The Infodesk project is a network of netcitizens who have aspired to be the connecting dots for newcoming jtorchat users. They will essentially be the living addressbook for the torchat network, helping to connect people together.
 
@@ -34,6 +35,7 @@ yffsghiwlxo3huaq!infodesk - Coordinator - jtorchat
 bwkuztdwo4a43uql!INFODESK Africa - Punupun
 d3fxnntczxbqgkql!INFODESK Central Europe - BadMad
 xzjxkjla7w2423ir!INFODESK South America - juanperez
+gp7rti2lqttb62aw!INFODESK Oceania - antonixa
 
 ===== Other Organizations ========
 We have no relations to these people or organizations. Let us know if we are missing, or have an error in this list. (or if any in here are acting like an arse
@@ -52,3 +54,6 @@ fs6qgtdynha3p6rn CWKU - SimplePM Admin
 
 // TorStatusNet http://lotjbov3gzzf23hc.onion/
 //25kiyrtxkvx3iucr TorStatusNet - administrator 
+
+// AnonReporter - AnonSource.org
+we7koo3rkg72ozyj AnonReporter - AnonSource
