@@ -12,6 +12,8 @@ There are 3 Tabs: <br><br>
  2.3. Alert activ: If checked it shows a little window when a message arrives. (just by the clock)<br>
  2.4. start File transfer automaticly: If checked it saves files automaticly in Download folder.<br>
  2.5. page function: with this option you can activate the page function. For details about the page function go to page function entry in wiki.<br>
+ 2.6. show log on start: if you check this you will see the log window while JTC is starting.<br>
+ 2.7. activate full log: if you check this your log will never be shortened. Watch for your diskspace if you run it.It can cause crashes if you don't have enough space.<br>
 3. Advanced: <br>
  3.1. Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
  3.2. Local Port: Instead of 8975 you can set any unused port.<br>
