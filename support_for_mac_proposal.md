@@ -1,0 +1,47 @@
+I don't know how it will exactly work, but ripping the 'tor' files off the vidalia bundle from torproject, and renaming it to either tor-ppc.app and tor-intel.app is the order around this proposal.
+
+This is the modified code for Process builder configeration in TorLoader.java
+
+Not sure if it will work.
+
+```
+				// PROCESSBUILDER settings for WINDOWS
+				if (os.indexOf("win") >= 0) {
+					Logger.log(Logger.NOTICE, "TorLoader",
+							"Start portable tor in windows");// if so, then start tor.exe with torrc.txt
+					pb = new ProcessBuilder(
+							new String[] { Config.BASE_DIR + "Tor/tor.exe",	"-f", "torrc.txt" });
+				// PROCESSBUILDER settings for macs
+				}  else if ( os.indexOf("mac") >= 0 ) {
+					
+					// check if cpu is powerpc or intel
+					boolean isPPC = System.getProperty("os.arch").trim().equalsIgnoreCase("ppc");
+					boolean isIntel = System.getProperty("os.arch").trim().equalsIgnoreCase("i386");
+					
+					// run corresponding .app
+					if(isIntel){
+						Logger.log(Logger.NOTICE, "TorLoader",	"Start portable tor in mac OS");
+						pb = new ProcessBuilder( new String[] { Config.BASE_DIR + "Tor/tor-intel.app",	"-f", "torrc.txt" });
+					}
+					
+					// run corresponding .app
+					if(isPPC){
+						Logger.log(Logger.NOTICE, "TorLoader",	"Start portable tor in mac OS");
+						pb = new ProcessBuilder( new String[] { Config.BASE_DIR + "Tor/tor-ppc.app",	"-f", "torrc.txt" });
+					}
+
+				// PROCESSBUILDER settings for LINUX and UNIX
+				} else if (os.indexOf("nix") >= 0 || os.indexOf("nux") >= 0) {
+					Logger.log(Logger.NOTICE, "TorLoader",
+							"Start portable tor in *nix or linux (need system tor to work)");
+					pb = new ProcessBuilder(new String[] { "tor", "-f",	Config.BASE_DIR + "torrc.txt" 
+					});
+					
+				// Catch All! As long as they can run tor from commandline
+				} else {
+					Logger.log(Logger.NOTICE, "TorLoader",
+							"Can't detect OS type, using system tor (need system tor to work)");
+					pb = new ProcessBuilder(new String[] { "tor", "-f",	Config.BASE_DIR + "torrc.txt" 
+					});
+				}
+```

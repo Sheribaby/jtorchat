@@ -1,0 +1,5 @@
+# Delete Contact #
+
+If you want to delete a contact just right click on the specific contact and click Delete Contact.
+
+The contact will not be automaticly loaded with request buddies.

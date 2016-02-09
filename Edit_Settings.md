@@ -1,0 +1,27 @@
+# Edit Settings #
+
+1. File->Settings<br>
+
+There are 3 Tabs: <br><br>
+2. General: <br>
+<blockquote>2.1. Profile-name: Enter your nickname here. For anonymity don't use your real name.<br>
+2.2. Profile-text: Here you can write stuff about you. Of course you don't need to fill it out.<br>
+2.3. Alert activ: If checked it shows a little window when a message arrives. (just by the clock)<br>
+2.4. start File transfer automaticly: If checked it saves files automaticly in Download folder.<br>
+2.5. page function: with this option you can activate the page function. For details about the page function go to page function entry in wiki.<br>
+2.6. show log on start: if you check this you will see the log window while JTC is starting.<br>
+2.7. activate full log: if you check this your log will never be shortened. Watch for your diskspace if you run it.It can cause crashes if you don't have enough space.<br>
+3. Advanced: <br>
+3.1. Tor socks port: Here you need to set the port your Tor service listens to. If you use the portable Tor delivered with jTorChat use the default.<br>
+3.2. Local Port: Instead of 8975 you can set any unused port.<br>
+3.3. Our ID: This is your tor hidden services address. Only edit this if you use another tor than delivered.<br>
+3.4. Initial Tor Portable at start: Check it if you want to use the portable Tor delivered with jTorChat.<br>
+4. Buddy Sync: <br>
+4.1. URL to Buddylist: Enter a URL to the buddylist. i.e. <a href='https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki'>https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki</a><br>
+4.2. sync: Click to get the buddylist<br>
+4.3. sync at every start: Check to let jTorchat get the buddies at each start.<br>
+5 Update Check: <br>
+5.1  URL for check: Enter the update URL.<br>
+<blockquote><a href='https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki'>https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki</a><br>
+</blockquote>5.2 check: click here for updating.<br>
+5.4 check for update at every start: check if you want to search for updates at start.<br>

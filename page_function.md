@@ -1,0 +1,12 @@
+# Page function #
+
+The new Page function is for retrieving pages from others automatically.<br /><br />
+
+With /page "filename" you can retrieve a site from your buddy.<br />
+With /sendpage "filename" you can send a site to your buddy.<br /><br />
+
+When there is no file in the command, it looks automatically for the page index.<br />
+
+If you want to deliver pages you need to check "page function" under File->Settings.<br />
+And create a file with the name index.txt and maybe other files with .txt ending in ./data/page.<br />
+Now your client sents this page automatically if someone requests it.

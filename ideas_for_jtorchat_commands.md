@@ -1,0 +1,77 @@
+/nick - change nickname
+
+/sync or /buddysync - gets the url to sync buddylist with
+
+/addbuddy - quickly adds a new buddy based on his/her address
+
+/help - prints out common instructions, as well as a link to a helpsite or documents.
+
+/dice - random number
+
+/time - your time
+
+/profile - change your profile msg
+
+/status - change your current status
+
+/quit - closes jtorchat
+
+/log - toggle logging of chat (very useful when you think you are gonna get raided)
+
+/add - add a person to a conversation (maybe via relay? Might be spoof prone)
+
+---
+
+# Harder to implement idea but may be useful (hence is low priority): #
+
+PAGEFILE System - Kind of like
+
+/page {filename} - request the other user to output to chat window the content from /txt/ folder as text.
+
+/mypage {filename} - same as above, but outputs your own file for the other user.
+
+later on access control should be considered, however I don't know how this can be best implemented. Maybe via password? Maybe via member-list?
+/page {filename} {password}
+
+**Example** "/page FAQ" will tell the other user to search their /txt/ folder for "FAQ" or "FAQ.txt" (basically the first term of the filename). If the other user finds "FAQ"/"FAQ.txt" that user displays the content.
+
+
+---
+
+
+Test of
+```
+/nick name
+/profile text
+/status on/away/xa
+/time
+/dice
+/quit
+/sync adresse
+/addbuddy torid name
+```
+
+Testing the beta implementation. It all works, though for /profile it doesn't show you what you typed  (it gets updated however)
+
+Also just noticed there is no way to place multiline comments by holding shift+enter.
+
+```
+(12:26:54) Private: change your Nick to yomang
+(12:27:13) Private: change your profile to
+(12:40:23) Private: Set status away
+(12:40:32) Me: time: 2012.02.09 at 12:40:31
+(12:40:33) {Myself}: time: 2012.02.09 at 12:40:31
+(12:40:37) Me: time: 2012.02.09 at 12:40:36 /time
+(12:40:38) {Myself}: time: 2012.02.09 at 12:40:36 /time
+(12:40:45) Me: dice: 54
+(12:40:46) {Myself}: dice: 54
+(12:40:49) Me: dice: 32
+(12:40:50) {Myself}: dice: 32
+(12:40:54) Me: dice: 53
+(12:40:54) {Myself}: dice: 53
+(12:41:29) Private: start sync Buddys with 1234567890123456
+(12:54:23) Me: fs6qgtdynha3p6rn
+(12:54:23) {Myself}: fs6qgtdynha3p6rn
+(12:54:29) Private: the buddy fs6qgtdynha3p6rn is now on the list!
+(12:55:05) Private: start sync Buddys with https://jtorchat.googlecode.com/svn/wiki/Buddy_List.wiki
+```

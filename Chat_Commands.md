@@ -1,0 +1,30 @@
+# Chat commands #
+
+
+/nick - Change your nickname
+
+/profile - Change your profile text
+
+/sync - Change the URL to sync your buddylist
+
+/dice - Gets a random number
+
+/time - Gets your local time
+
+/sendpage - Send a page from you to your buddy
+
+/page - Retrieve a page from your buddy
+
+/status - Change your current status
+
+/addbuddy - Quickly adds a new buddy based on his/her address
+
+/delbuddy - Quickly removes a buddy based on his/her address
+
+/log - Save a log from the chatwindow in ./log
+
+/me - Make an action example: /me is going to drive now...
+
+/quit - Closes jtorchat
+
+/help - Prints out common instructions.

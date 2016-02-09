@@ -1,0 +1,7 @@
+# Using the Broadcast Chat #
+
+In the main window with the option Tag you can select on which broadcast channel you want to participate.
+
+If you select one you see the messages for this channel and can send messages to that channel.
+
+If you want to read all just select a Tag and then select the Tag ALL.

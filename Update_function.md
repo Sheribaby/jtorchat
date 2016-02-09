@@ -1,0 +1,7 @@
+<version!0!7!8!>
+
+<typ!important!>
+
+This is the file for checking updates.
+You can use it with this link:
+https://jtorchat.googlecode.com/svn/wiki/Update_function.wiki

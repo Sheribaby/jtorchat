@@ -1,0 +1,210 @@
+6 of feb - What was changed was 'loadBuddiesRemote'. It was switched to an unresolved 'sock' based connection, to prevent DNS leakage. Also better pattern matching
+
+
+
+---
+
+
+
+Via jtorchat, grab bl.txt from a remote location, and merge with own buddies.
+
+
+BuddyList.java - Method added (work in progress):
+
+At the first lines in this file you must add this:
+```
+import java.io.InputStreamReader;
+import java.net.InetSocketAddress;
+import java.net.Proxy;
+import java.net.URL;
+import java.net.URLConnection;
+```
+
+In the class BuddyList you must add this:
+```
+	/*
+	 * Experimental listener for buddy updater
+	 * Added "runStaticInit("net.tsu.TCPort.BuddyList");" to TCPort.java
+	 * */
+    /*
+	*  REMOTE BUDDY LOAD VIA TOR
+	* */
+	public static void loadBuddiesRemote(String remote_bl_URL) {
+		// Don't load if no url was specified
+          if ( remote_bl_URL == null ) {
+                  Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "No remote buddylist specified. Skipping remote load.");
+                  Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Tip: remote_buddylist_url = example.com/bl.txt ; in settings.ini");
+                  return;
+          } else {
+                  Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Loading buddies from remote url... ");
+          }
+          
+          
+          /*
+           * SOCKET RETREIVE REMOTE FILE VIA PROXY TO SCANNER OBJECT
+           * */
+          Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "REMOTE BUDDYLISTURL LOCATION: "+remote_bl_URL);
+
+          try {
+			//assume https:// if lacking protocol
+			if(!remote_bl_URL.matches(".+://.+")){
+				remote_bl_URL = "https://"+remote_bl_URL;
+			}
+
+
+                  // Parse the URL for socket usage via URL. Can't use URL directly due to DNS leaks
+                  URL aURL = new URL(remote_bl_URL);
+                  // Placed parsed URL into vars for general usage 
+                                                                                                  //              http://example.com:80/docs/books/tutorial/index.html?name=networking#DOWNLOADING
+                  String host = aURL.getHost();                   //              host = example.com
+                  int port = aURL.getPort();                          //          port = 80
+          String path = aURL.getPath();                   //              path = /docs/books/tutorial/index.html                    
+          // Sometimes portnumber is not declared (shows as port = -1), assume port 80 in that case 
+          if ( port < 0 ){        port = 80;    }
+          
+          // Declare a new proxyed socket and connect to it (No DNS leak via createUnresolved)
+                  Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Configering secure proxy tunnel to buddylist; Port: "+Config.SOCKS_PORT+" host: 127.0.0.1");
+                  Socket ourSock = new Socket(new Proxy(Proxy.Type.SOCKS, new InetSocketAddress("127.0.0.1", Config.SOCKS_PORT)));
+                  Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Starting secure remote proxy tunnel to buddylist");
+                  ourSock.connect(InetSocketAddress.createUnresolved(host, port));
+                                      
+      //INPUT/OUTPUT STREAM
+      Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "opening in/out stream");
+      InputStream is = ourSock.getInputStream();
+      OutputStream os = ourSock.getOutputStream();
+      
+      //read incoming data
+      Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "start inputstream scanner");
+                  Scanner s = new Scanner( new InputStreamReader( is ) ) ; //create scanner obj
+                  
+                  
+      //Send Request Header to output stream
+      String sendString = "GET " + path + " HTTP/1.0 \r\n" +
+                          "Host: " + host + "\r\n" +
+                          "\r\n";
+      Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", sendString);
+      os.write(sendString.getBytes());
+      
+
+          
+      /*
+       *  PROCESS FILE AND MERGE BUDDY
+       * */
+      Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Processing remote buddies");
+      Random r = new Random();
+      
+                  Util.readBytesTillChar(ourSock.getInputStream(), '\n'); //strip away header (first line) // needs "import net.tsu.TCPort.util.Util;"
+      
+      //print out everything
+      //while (s.hasNextLine()) {
+          //    Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", s.nextLine());
+      //}
+
+      while (s.hasNextLine()) {
+              String l = s.nextLine();
+              // Hunt for matching address in a new line
+              
+              
+              // Skip anything less than 16 char, as substring cannot handle it (it will error out)
+              if (l.length() >= 16){
+                  //regex checker
+                  if(l.matches("^([a-zA-Z0-9]{16}(?:[ !].{0,}||))")){
+                              // from 0 to 16 is address, 17 onwards is name
+                          // Ignore any buddies already in your contact list
+                              if (!buds.containsKey(l.substring(0, 16)))
+                              {
+                                  if (l.length() > 16) {
+                                      Buddy b = new Buddy(l.substring(0, 16), l.substring(17)); //.connect();
+                                      b.reconnectAt = System.currentTimeMillis() + 15000 + r.nextInt(30000);
+                                      if (l.toCharArray()[16] == '!')
+                                      b.overrideName = true;
+                                      } else
+                                      {
+                                       new Buddy(l.substring(0, 16), null).reconnectAt = System.currentTimeMillis() + 15000 + r.nextInt(30000); //.connect();
+                                      } 
+                              }
+                  }
+              }
+      }
+
+
+            
+            Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "Processing Done");
+            // Close input/output stream
+            os.close();
+            is.close();
+            // Close socket
+            ourSock.close();
+        } catch (IOException e1) {
+			Logger.log(Logger.INFO, "BuddyList loadBuddiesRemote", "ERROR: Cannot remote buddies list - Skipping: "+e1);
+			return;
+		}
+            
+    }
+```
+
+
+---
+
+
+Using this function is easy in any function from the code:
+```
+BuddyList.loadBuddiesRemote("http://example.net/bl.txt");
+```
+
+
+---
+
+
+When you will it start automatically with your own site from settings.txt you can add this, too.
+
+Under the following code (in config.java):
+```
+public static int SOCKS_PORT; 
+public static int LOCAL_PORT; 
+```
+add this string
+
+```
+public static String buddylist_update; 
+```
+
+and under every (in config.java)
+```
+TCPort.profile_name = assign("profile_name", null, prop);
+TCPort.profile_text = assign("profile_text", null, prop);
+```
+
+add this string, too:
+```
+buddylist_update  = assign("sync", null, prop);
+```
+
+
+---
+
+
+Add to TCPort.java
+```
+/* * 
+Call For remote buddylist on startup - (after Tor is presumed to have booted)
+* */
+BuddyList.loadBuddiesRemote(Config.buddylist_update);
+```
+
+under this
+```
+if (!Config.TESTING && Config.loadTor) // only load portable tor if not testing
+TorLoader.loadTor();
+// new Gui().init();
+runInit("net.tsu.TCPort.Gui.Gui");
+launched = true;
+try {
+BuddyList.loadBuddies();
+} catch (FileNotFoundException fnfe) {
+fnfe.printStackTrace();
+// no buddylist file
+}
+```
+
+Now you can add in the Settings.txt the sync tag.

@@ -1,0 +1,166 @@
+## Problem was fixed, this is now 100% working code ##
+
+This is a system designed to spit out a page to sender via "/page" command. This is a plugin, so besides the runStaticInit, it has no presence in the rest of the code.
+
+Note: There is a problem with buddy.sendMessage() , it doesn't send strings with multi-line "\n" "\n\r" characters. Hence this code doesn't work, as nothing is displayed on the other side. Need to fix that if you want this system to work.
+
+Note Note: actually it might be that the file read in, is not in UTF-8, not sure how to deal with that...
+
+**FINAL NOTE**: okay fixed, must escape "\n" by using "\\n"
+
+
+
+---
+
+in TCPort.java
+
+```
+			runStaticInit("net.tsu.TCPort.page.Page");
+```
+
+
+---
+
+
+in a new net.tsu.TCPort.page folder
+package net.tsu.TCPort.page;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Scanner;
+import net.tsu.TCPort.APIManager;
+import net.tsu.TCPort.Buddy;
+import net.tsu.TCPort.Config;
+import net.tsu.TCPort.Logger;
+import net.tsu.TCPort.Gui.Gui;
+import net.tsu.TCPort.Gui.GuiListener;
+import net.tsu.TCPort.listeners.APIListener;
+import net.tsu.TCPort.listeners.CommandListener;
+
+public class Page {
+	
+	// Retrieve page
+	private static String page(String pagename){
+		if( pagename == null || pagename.length() == 0 ){ pagename = "index"; } // defaults to page
+		// Try to locate the file
+		try {					
+			return read(pagename);
+		} catch (FileNotFoundException e) {
+			try {					
+				return read(pagename+".nfo");
+			} catch (FileNotFoundException e1) {
+				try {					
+					return read(pagename+".txt");
+				} catch (FileNotFoundException e2) {
+					Logger.log(	Logger.NOTICE,"Page", "Error:"+e2 );
+					return "page not found";
+				}
+			}
+		}
+	}
+	
+	// Read file
+	private static String read(String pagename) throws FileNotFoundException{
+		String result = "[File:"+pagename+"]"; // show the filename
+		if(pagename.matches(".+[.][.]/.+")) {return "page not found";} //rejects any attempt to leave /txt/
+		Scanner scannerObj = new Scanner(new FileInputStream(Config.BASE_DIR + "txt/" +pagename));			
+        // repeat until all lines is read
+		while (scannerObj.hasNextLine()) {
+			result += "\\n"+scannerObj.nextLine();
+		}						
+		return result;
+	}
+
+	// start listeners
+	public static void init(){
+		Gui.getInstance().cmdListeners.put("mypage", new GuiListener() {
+			public void onCommand(Buddy buddy, String s) {
+				
+				// pass through page commands to other user
+				if (s.startsWith("/page")) {
+					try {
+						buddy.sendMessage(s);
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+				
+				// Send own page to buddy
+				if (s.startsWith("/mypage")) {
+					String filename = s.substring(7).replaceAll("\n", "\\n").trim();
+					try {
+						buddy.sendMessage(page(filename));
+					} catch (IOException e) {
+						e.printStackTrace();
+					}
+				}
+			}	
+		});
+		// initate listener to to reply to any /page request
+		APIManager.addEventListener(new Listener());
+		
+	}
+	
+	private static class Listener implements APIListener, CommandListener {
+
+		@Override
+		public void onCommand(Buddy buddy, String s) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onStatusChange(Buddy buddy, byte newStatus, byte oldStatus) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProfileNameChange(Buddy buddy, String newName,
+				String oldName) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onProfileTextChange(Buddy buddy, String newText,
+				String oldText) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onAddMe(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onMessage(Buddy buddy, String s) {
+			// TODO Auto-generated method stub
+			if (s.startsWith("/page")) {
+				String filename = s.substring(5).replaceAll("\n", "\\n").trim();
+				try {
+					buddy.sendMessage(page(filename));
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+
+		}
+
+		@Override
+		public void onNewBuddy(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}
+
+		@Override
+		public void onBuddyRemoved(Buddy buddy) {
+			// TODO Auto-generated method stub
+			
+		}		
+	}
+
+}```

@@ -1,0 +1,22 @@
+# Filetransfer #
+
+For sending a file just drag it into the open chat window.
+Then a sending dialog will appear. If you want to abort just click cancel.
+
+Accepting file:
+
+1. For start click on "Start". You can pause download with stop.<br>
+2. After download is finished you have several options.<br>
+<blockquote>2.1 Dir: Open the directory the file was savid in.<br>
+2.2 Open: Open the file with the default program for that filetype.<br>
+2.3 Delete: Deletes the downloaded file.<br>
+2.4 Close: Closes the download window.<br></blockquote>
+
+
+Denying acceptance:<br>
+
+1. Just click on cancel.<br>
+
+Settings:<br>
+
+1. Under File->Settings there is a checkbox "start file transfer automaticly" if you use this the files are saved automaticly.
